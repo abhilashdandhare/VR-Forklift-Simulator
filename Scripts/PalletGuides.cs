@@ -1,10 +1,6 @@
 using UnityEngine;
 
-/// <summary>
-/// Simple visual guides to help position forklift at pallet
-/// Shows blue guide lines when forklift is nearby
-/// No alignment detection - just visual reference!
-/// </summary>
+
 public class PalletGuides : MonoBehaviour
 {
     [Header("Guide Settings")]
@@ -37,24 +33,24 @@ public class PalletGuides : MonoBehaviour
     [Tooltip("Fork transform - auto-finds if empty")]
     [SerializeField] private Transform forkTransform;
     
-    // Visual elements
+
     private LineRenderer leftGuideLine;
     private LineRenderer rightGuideLine;
     private LineRenderer centerLine;
     private GameObject guideContainer;
     
-    // Components
+
     private PalletPickup palletPickup;
     
     private void Start()
     {
-        // Get PalletPickup component
+
         palletPickup = GetComponent<PalletPickup>();
         
-        // Create visual guide lines
+    
         CreateGuideLines();
         
-        // Try to find fork if not assigned
+
         if (forkTransform == null)
         {
             GameObject forklift = GameObject.Find("Forklift Truck");
@@ -64,7 +60,7 @@ public class PalletGuides : MonoBehaviour
             }
         }
         
-        // Start with guides hidden
+
         ShowGuides(false);
     }
     
@@ -72,7 +68,7 @@ public class PalletGuides : MonoBehaviour
     {
         if (forkTransform == null) return;
         
-        // Don't show guides if pallet is picked up
+
         if (palletPickup != null && palletPickup.IsPickedUp())
         {
             ShowGuides(false);

@@ -1,10 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-/// <summary>
-/// Detects pallets near forklift forks and triggers pickup/drop
-/// Attach this to the Forklift.Fork object
-/// </summary>
 public class ForkDetector : MonoBehaviour
 {
     [Header("References")]

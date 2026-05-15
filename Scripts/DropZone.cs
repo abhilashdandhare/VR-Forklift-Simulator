@@ -1,8 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Place this on a trigger volume where the trainee must deliver a pallet.
-/// </summary>
 public class DropZone : MonoBehaviour
 {
     [Header("Settings")]
